@@ -1,0 +1,6 @@
+[TypedActor]    将消息传递参数隐藏在方法内调用，但必须满足Actor顺序地、独占的执行代码逻辑的要求。有类型Actor相对于普通的Actor的优势在于有类型的actor拥有静态的契约，你不需要自定义消息结构，缺点是你能做什么和不能做什么有约束，无法执行become和unbecome
+[IHandle<TEntity>]    配合Typeed使用，这样显得actor的职责更加清晰，actor能够处理那些消息一目了然.
+[Context.ActorSelection]    可以使用actorSelection 来发送消息，在发生消息时会检查符合条件的路径，如果没有找到对应的路径，发送的消息将被丢弃.为了取得使用ActorSection 选择的Actor的ActorRef（actor引用），你需要向选中的路径发送一个消息，所有的Actor都支持内置的Identiy消息，对这个消息自动返回一个包含ActorRef的ActorIdentity消息。
+[system.ActorOf]    用来创建actor；接收Props.Create<TActor>()返回的结果;
+[Props]    配置actor使用特定的对象
+[Sender]    标示了消息是从哪个actor发送过来的，代表了一个远程actor引用
