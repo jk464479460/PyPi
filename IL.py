@@ -12,6 +12,11 @@ def FindIt():
                continue
           if(inputStr=='n'):
                return
+          if(inputStr=="all"):
+               for line in allLine:
+                    print(line,end='')
+               print('all show',end='')
+               
           for line in allLine:
                if(line.find(inputStr,0,len(inputStr))!=-1):
                     print(line)
