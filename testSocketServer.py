@@ -32,7 +32,7 @@ def DeCompress(r):
 def ClientRec():
      sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM);
      try:
-          sock.connect(('192.168.1.157', 9000));
+          sock.connect(('115.29.251.85', 9000));
           sock.sendall(data.encode(encoding='utf_8'));
      except:
           print('error connect\n')
@@ -57,7 +57,7 @@ def ClientRec():
      
 def TestServer():
      for i in range(1,40):
-          time.sleep(2);
+          time.sleep(1);
           t=threading.Thread(target=ClientRec);
           t.start();
 
